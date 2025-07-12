@@ -27,6 +27,17 @@ module "virtual_network" {
   address_space = ["10.0.0.0/16"]
 }
 
+
+module "virtual_network2" {
+    depends_on = [module.resource_group]
+  source = "../modules/azurerm_virtual_network"
+
+  virtual_network_name = "vnet-tondu"
+  virtual_network_location = "Australia East"
+  resource_group_name = "rg-tondu"
+  address_space = ["10.0.0.0/16"]
+}
+
 module "virtual_network1" {
     depends_on = [module.resource_group]
   source = "../modules/azurerm_virtual_network"
@@ -36,7 +47,6 @@ module "virtual_network1" {
   resource_group_name = "rg-dhondhu"
   address_space = ["10.0.0.0/16"]
 }
-
 
 module "frontend_subnet" {
     depends_on = [module.virtual_network]
