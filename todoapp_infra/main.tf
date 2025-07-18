@@ -22,6 +22,12 @@ module "chikni" {
   resource_group_name = "rg-nimbutata23"
   resource_group_location = "Australia East"
 }
+module "resource_group25" {
+  source = "../modules/azurerm_resource_group"
+  resource_group_name = "rg-duforline25"
+  resource_group_location = "Australia East"
+}
+
 
 module "virtual_network" {
     depends_on = [module.resource_group]
