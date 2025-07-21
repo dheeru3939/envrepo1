@@ -11,11 +11,6 @@ module "resource_group2" {
   resource_group_location = "Australia East"
 }
 
-module "resource_group" {
-  source = "../modules/azurerm_resource_group"
-  resource_group_name = "rg-todoapp3912"
-  resource_group_location = "Australia East"
-}
 
 module "chikni" {
   source = "../modules/azurerm_resource_group"
